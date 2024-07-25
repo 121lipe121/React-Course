@@ -34,8 +34,7 @@ export function defineWinner(gameBoard, players) {
       firstSquare === secondSquare &&
       firstSquare === thirdSquare
     ) {
-      (winner = players[firstSquare].name),
-        (players[firstSquare].score += 1);
+      (winner = players[firstSquare].name), (players[firstSquare].score += 1);
     }
   }
   return winner;
