@@ -117,6 +117,7 @@ h1 {
   padding: 0.5rem;
   border-radius: 2px;
   text-overflow: ellipsis;
+  margin-right: 0.4rem;
 }
 
 .player input {
@@ -128,6 +129,7 @@ h1 {
   animation: pulse-text 2s infinite;
   background-color: #46432f;
   text-transform: uppercase;
+  margin-right: 0.4rem;
 }
 
 .player-symbol {
