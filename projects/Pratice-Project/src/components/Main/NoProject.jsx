@@ -1,6 +1,12 @@
+import { useContext } from "react";
+
 import logo from "../../assets/no-projects.png";
 
-export default function NoProject({ handleMenu }) {
+import { ProjectsContext } from "../../context/projects-context";
+
+export default function NoProject() {
+  const { handleMenu } = useContext(ProjectsContext);
+
   return (
     <div className="flex-1 p-4 mt-32 text-center text-stone-700">
       <img src={logo} alt="Logo" className="w-32 mx-auto" />

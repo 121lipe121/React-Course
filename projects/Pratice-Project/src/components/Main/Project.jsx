@@ -1,9 +1,16 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 
 import Input from "../Input";
 import Modal from "../Modal";
 
-export default function Project({ project, handleProjectList, handleMenu }) {
+import { ProjectsContext } from "../../context/projects-context";
+
+export default function Project() {
+  const { projectList, menu, handleProjectList, handleMenu } =
+    useContext(ProjectsContext);
+
+  const project = projectList.find((obj) => obj.title === menu);
+
   const tasks = useRef();
   const modal = useRef();
 
@@ -33,7 +40,9 @@ export default function Project({ project, handleProjectList, handleMenu }) {
   return (
     <>
       <Modal ref={modal}>
-        <h2 className="text-gray-600 mt-1 text-center font-bold">Invalid Input</h2>
+        <h2 className="text-gray-600 mt-1 text-center font-bold">
+          Invalid Input
+        </h2>
         <p className="mt-4 text-gray-700 underline-offset">
           You can't create a task with less than 3 caracteres or with the same
           name.

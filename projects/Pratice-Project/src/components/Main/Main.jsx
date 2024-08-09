@@ -1,23 +1,22 @@
+import { useContext } from "react";
+
 import NoProject from "./NoProject";
 import AddProject from "./AddProject";
 import Project from "./Project";
 
-export default function Main({ menu, handleMenu, handleProjectList, project }) {
+import { ProjectsContext } from "../../context/projects-context";
+
+export default function Main() {
+  const { menu } = useContext(ProjectsContext);
+
   return (
     <>
       {menu === "Home" ? (
-        <NoProject handleMenu={handleMenu} />
+        <NoProject />
       ) : menu === "AddProject" ? (
-        <AddProject
-          handleMenu={handleMenu}
-          handleProjectList={handleProjectList}
-        />
+        <AddProject />
       ) : (
-        <Project
-          project={project.find((obj) => obj.title === menu)}
-          handleProjectList={handleProjectList}
-          handleMenu={handleMenu}
-        />
+        <Project />
       )}
     </>
   );

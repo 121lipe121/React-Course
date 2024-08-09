@@ -1,4 +1,10 @@
-export default function SideMenu({ handleMenu, projectList }) {
+import { useContext } from "react";
+
+import { ProjectsContext } from "../context/projects-context";
+
+export default function SideMenu() {
+  const {handleMenu, projectList} = useContext(ProjectsContext)
+
   return (
     <menu className="w-64 bg-gray-800 text-white h-screen p-4 rounded-tr-3xl">
       <h2 className="text-xl font-bold mb-4 mt-20 ml-4">Your Pojects</h2>

@@ -1,7 +1,11 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import Input from "../Input";
 
-export default function AddProject({ handleMenu, handleProjectList }) {
+import { ProjectsContext } from "../../context/projects-context";
+
+export default function AddProject() {
+  const { handleMenu, handleProjectList } = useContext(ProjectsContext);
+
   const title = useRef();
   const description = useRef();
   const date = useRef();
